@@ -23,6 +23,7 @@
     "@angular/router": "~8.2.14",
     "@covalent/core": "^2.1.1",
     "@covalent/echarts": "^2.1.0",
+    "echarts": "^4.5.0",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

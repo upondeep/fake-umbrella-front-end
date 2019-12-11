@@ -25,8 +25,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-theme($theme, $typography); // $typography is an **optional** argument for the covalent-theme
 
 // (optional) Additional themes
-@include covalent-markdown-theme($theme);
-@include covalent-highlight-theme();
+// @include covalent-markdown-theme($theme);
+// @include covalent-highlight-theme();
 
 .blue-orange {
     $primary2: mat-palette($mat-blue, 700);
