@@ -16,6 +16,8 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentStepsModule } from '@covalent/core/steps';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 
+/* Custom module */
+
 @NgModule({
   declarations: [
     AppComponent

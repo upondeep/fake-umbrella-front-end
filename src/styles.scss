@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.nav-router-link{
+    font-weight:bold;
+    color:coral !important;
+    // background-color: coral;
+    mat-icon{
+        color:coral !important;
+    }
+}
+
+.mat-sidenav-container { background-color: #f2f2f2; }
+.mat-drawer-container{
+    background-color: #fafafa;
+    color: rgba(0,0,0,.87);
+    }
