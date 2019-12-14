@@ -7,18 +7,15 @@
 
 // Define a custom typography config that overrides the font-family
 // or any typography level.
-$typography: mat-typography-config(
-  $font-family: 'Roboto, monospace',
-  $headline: mat-typography-level(32px, 48px, 700)
-);
+$typography: mat-typography-config($font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700));
 
 @include mat-core($typography); // $typography is an **optional** argument for the mat-core
 
 $primary: mat-palette($mat-orange, 800, 100, 900);
-$accent:  mat-palette($mat-light-blue, 600, 100, 900);
+$accent: mat-palette($mat-light-blue, 600, 100, 900);
 
-$warn:    mat-palette($mat-red, 600, 100, 900);
-
+$warn: mat-palette($mat-red, 600, 100, 900);
 $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
@@ -29,12 +26,12 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // @include covalent-highlight-theme();
 
 .blue-orange {
-    $primary2: mat-palette($mat-blue, 700);
-    $accent2:  mat-palette($mat-orange, 800);
-    $warn2:    mat-palette($mat-red, 600);
+  $primary2: mat-palette($mat-blue, 700);
+  $accent2: mat-palette($mat-orange, 800);
+  $warn2: mat-palette($mat-red, 600);
 
-    $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
+  $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
-    @include angular-material-theme($blue-orange);
-    @include covalent-theme($blue-orange);
+  @include angular-material-theme($blue-orange);
+  @include covalent-theme($blue-orange);
 }

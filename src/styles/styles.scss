@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'theme';
+@import 'var';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nav-router-link {
+    font-weight: bold;
+    color: mat-color($primary, default) !important;
+    background-color: $comfort-eye !important;
+
+    mat-icon {
+        color: mat-color($primary, default) !important;
+    }
+}
+
+mat-sidenav-container {
+
+    // .mat-sidenav-container { background-color: #f2f2f2; }
+    a {
+
+        // :link, &:link{
+        //     background-color: darkkhaki !important;
+        // }
+        :focus,
+        &:focus {
+            background: transparent !important;
+        }
+
+        // :visited,&:visited{
+        //     background-color: darkcyan !important;
+        // }
+        // :active, &:active{
+        //     background-color: coral !important;
+        // }
+        :hover,
+        &:hover {
+            background-color: rgb(170, 250, 239) !important;
+        }
+    }
+
+    & .mat-drawer-container {
+        background-color: white;
+        color: rgba(0, 0, 0, .87);
+    }
+}

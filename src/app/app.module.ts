@@ -15,6 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentStepsModule } from '@covalent/core/steps';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
+import { TdDataTableService } from '@covalent/core/data-table';
 
 /* Custom module */
 
@@ -36,7 +37,9 @@ import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
     CovalentStepsModule,
     CovalentBaseEchartsModule,
   ],
-  providers: [],
+  providers: [
+    // TdDataTableService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

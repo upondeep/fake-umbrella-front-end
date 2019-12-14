@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TdDataTableService, ITdDataTableColumn } from '@covalent/core/data-table';
+import { ICustomer } from 'src/app/model/icustomer.interface';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor() { }
+  customersList: ICustomer[] = [];
+  columns: ITdDataTableColumn[] = [
+    { name: 'name', label: 'Customer Name' },
+    { name: 'location', label: 'Location' },
+    { name: 'telephone', label: 'Telephone Number' },
+    { name: 'contact', label: 'Person of Contact' },
+    { name: 'emplyees', label: 'Number of Employees' },
+  ];
+
+  constructor(
+    private dataTableService: TdDataTableService,
+  ) { }
 
   ngOnInit() {
   }
