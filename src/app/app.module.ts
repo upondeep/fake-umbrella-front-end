@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { TdDataTableService } from '@covalent/core/data-table';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     //
     MatListModule,
     MatIconModule,
@@ -39,6 +41,7 @@ import { TdDataTableService } from '@covalent/core/data-table';
   ],
   providers: [
     // TdDataTableService,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })

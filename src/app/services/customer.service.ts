@@ -15,7 +15,7 @@ export class CustomerService {
 
   }
 
-  getAllCustomer() {
+  getAllCustomers() {
     return this.http.get<ICustomer[]>(`${apiBaseUrl}/customers`);
   }
 

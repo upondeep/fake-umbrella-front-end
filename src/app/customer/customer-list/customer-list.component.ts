@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TdDataTableService, ITdDataTableColumn } from '@covalent/core/data-table';
 import { ICustomer } from 'src/app/model/icustomer.interface';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -13,16 +14,21 @@ export class CustomerListComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'name', label: 'Customer Name' },
     { name: 'location', label: 'Location' },
-    { name: 'telephone', label: 'Telephone Number' },
-    { name: 'contact', label: 'Person of Contact' },
-    { name: 'emplyees', label: 'Number of Employees' },
+    { name: 'telephone_number', label: 'Telephone Number' },
+    { name: 'person_of_contact', label: 'Person of Contact' },
+    { name: 'number_of_employees', label: 'Number of Employees' },
   ];
 
   constructor(
     private dataTableService: TdDataTableService,
+    private customerServkce: CustomerService,
   ) { }
 
   ngOnInit() {
+    this.customerServkce.getAllCustomers().subscribe(res => {
+      console.log("res", res);
+      this.customersList = res;
+    });
   }
 
 }
