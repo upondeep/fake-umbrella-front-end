@@ -4,9 +4,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ICustomer } from 'src/app/model/icustomer.interface';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Observable, from } from 'rxjs';
-import { TelephoneNumberValidator } from '../../shared/form-validators/telephone-number.validator';
-import { NaturalNumberValidator } from 'src/app/shared/form-validators/natrual-number.validator';
-import { PostalCodeValidator } from 'src/app/shared/form-validators/postal-code.validator';
+import { telephoneNumberValidator } from '../../shared/form-validators/telephone-number.directive';
+import { naturalNumberValidator } from 'src/app/shared/form-validators/natrual-number.directive';
+import { postalCodeValidator } from 'src/app/shared/form-validators/postal-code.directive';
 
 @Component({
   selector: 'app-add-or-edit-customer',
@@ -42,7 +42,7 @@ export class AddOrEditCustomerComponent implements OnInit {
 
   getLocationErrorMsg() {
     let location = this.customerForm.get('location');
-    return location.hasError('validPostalCode') ? 'Please input your location, put postal code at end.' : '';
+    return location.hasError('invalidPostalCode') ? 'Please input your location, put postal code at end.' : '';
   }
 
   constructor(
@@ -59,11 +59,21 @@ export class AddOrEditCustomerComponent implements OnInit {
   ngOnInit() {
     this.customerForm = this.fb.group({
       name: ['', Validators.required],
-      location: ['', [Validators.required, PostalCodeValidator]],
-      telephone_number: ['', [Validators.required, TelephoneNumberValidator]],
-      person_of_contact: ['', Validators.required],
-      number_of_emplyees: [0, [Validators.required, NaturalNumberValidator]],
+      location: ['',
+        // Validators.required
+        [Validators.required, postalCodeValidator()]
+      ],
+      telephone: ['',
+        // Validators.required
+        [Validators.required, telephoneNumberValidator()]
+      ],
+      personOfContact: ['', Validators.required],
+      numberOfEmployees: [0,
+        // Validators.required
+        [Validators.required, naturalNumberValidator()]
+      ],
     });
+    console.log('form', this.customerForm);
   }
 
 
