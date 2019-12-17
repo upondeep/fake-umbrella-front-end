@@ -2,7 +2,7 @@
 
 :host ::ng-deep {
     td-data-table {
-        border: 1px solid black !important;
+        border: 1px solid #ccc !important;
     }
 
     .td-data-table-head {
@@ -12,9 +12,33 @@
             border-bottom-width: 0 !important;
 
             .td-data-table-column {
-                border-right: 1px solid black;
+                &:not(:first-of-type):not(:last-of-type) {
+                    border-right: 1px solid #ccc;
+                }
+
                 font-size: 14px !important;
             }
+
+        }
+
+    }
+
+    .td-data-table-cell {
+        &:not(:first-of-type):not(:last-of-type) {
+            border-right: 1px solid #ccc;
         }
     }
+
+    .td-data-table-scrollable {
+        overflow: visible !important;
+    }
+
+    .toolbar-spacer {
+        flex: 1 1 auto;
+    }
+
+    mat-toolbar-row {
+        padding: 0 50px;
+    }
+
 }

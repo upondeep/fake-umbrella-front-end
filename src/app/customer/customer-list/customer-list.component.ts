@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TdDataTableService, ITdDataTableColumn } from '@covalent/core/data-table';
 import { ICustomer } from 'src/app/model/icustomer.interface';
 import { CustomerService } from 'src/app/services/customer.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddOrEditCustomerComponent } from '../add-or-edit-customer/add-or-edit-customer.component';
 
 @Component({
   selector: 'app-customer-list',
@@ -22,6 +24,7 @@ export class CustomerListComponent implements OnInit {
   constructor(
     private dataTableService: TdDataTableService,
     private customerServkce: CustomerService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -30,5 +33,17 @@ export class CustomerListComponent implements OnInit {
       this.customersList = res;
     });
   }
+
+  addOrEditCustomer(editMode: boolean) {
+    let dialogRef = this.dialog.open(AddOrEditCustomerComponent, {
+      width: '600px',
+    });
+    dialogRef.componentInstance.editMode = editMode;
+    dialogRef.afterClosed().subscribe(res => {
+      console.log('result:', res);
+    });
+  }
+
+  deleteCustomer() { }
 
 }

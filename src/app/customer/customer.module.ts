@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { CustomerRoutingModule } from './customer-routing.module';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-import { AddOrEditCustomerComponent } from './add-or-edit-customer/add-or-edit-customer.component';
 import { CovalentDataTableModule } from '@covalent/core/data-table';
 
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { AddOrEditCustomerComponent } from './add-or-edit-customer/add-or-edit-customer.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,9 +12,12 @@ import { CovalentDataTableModule } from '@covalent/core/data-table';
     AddOrEditCustomerComponent,
   ],
   imports: [
-    CommonModule,
     CustomerRoutingModule,
     CovalentDataTableModule,
+    SharedModule,
+  ],
+  entryComponents: [
+    AddOrEditCustomerComponent,
   ]
 })
 export class CustomerModule { }

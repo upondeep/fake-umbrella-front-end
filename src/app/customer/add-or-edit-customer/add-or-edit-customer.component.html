@@ -1,1 +1,31 @@
-<p>add-or-edit-customer works!</p>
+<h1 mat-dialog-title>
+    {{getTitle()}}
+</h1>
+<div fxLayout="column" mat-dialog-content class="container">
+    <form fxLayout="column" [formGroup]="customerForm">
+        <mat-form-field fxFlex>
+            <input matInput placeholder="Name" FormControlName="name">
+        </mat-form-field>
+        <mat-form-field fxFlex>
+            <input matInput placeholder="Location" FormControlName="location">
+            <mat-error *ngIf="location.invalid">{{getLocationErrorMsg()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex>
+            <input matInput placeholder="Telephone Number" FormControlName="telephone">
+        </mat-form-field>
+        <mat-form-field fxFlex>
+            <input matInput placeholder="Person Of Contact" FormControlName="personOfContact">
+        </mat-form-field>
+        <mat-form-field fxFlex>
+            <input matInput placeholder="Number Of Employees" FormControlName="numberOfEmployees">
+        </mat-form-field>
+    </form>
+    <div fxFlex fxLayoutGap="20px" fxLayoutAlign="center center">
+        <button mat-button (click)="save()" disabled="disableSave()">
+            Save
+        </button>
+        <button mat-button (click)="cancel()">
+            Cancel
+        </button>
+    </div>
+</div>

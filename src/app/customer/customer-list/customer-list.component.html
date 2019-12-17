@@ -1,3 +1,21 @@
-<td-data-table #customerTable [data]="customersList" [columns]="columns" [selectable]="true" [multiple]="multiple" [sortable]="true">
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>
+            Customers List
+        </span>
+        <span class="toolbar-spacer"></span>
+        <button mat-icon-button (click)="addOrEditCustomer(false)">
+            <mat-icon>add</mat-icon>
+        </button>&nbsp;
+        <button mat-icon-button (click)="addOrEditCustomer(true)">
+            <mat-icon>edit</mat-icon>
+        </button>&nbsp;
+        <button mat-icon-button (click)="deleteCustomer()">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<td-data-table flex #customerTable [data]="customersList" [columns]="columns" selectable="true" multiple="true"
+    [sortable]="true">
 
 </td-data-table>
