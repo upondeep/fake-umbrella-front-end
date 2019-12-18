@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'theme';
+// @import 'theme';
 @import 'var';
 
 html,
@@ -14,11 +14,11 @@ body {
 
 .nav-router-link {
     font-weight: bold;
-    color: mat-color($primary, default) !important;
+    color: $primary-color !important;
     background-color: $comfort-eye !important;
 
     mat-icon {
-        color: mat-color($primary, default) !important;
+        color: $primary-color !important;
     }
 }
 
@@ -51,4 +51,17 @@ mat-sidenav-container {
         background-color: white;
         color: rgba(0, 0, 0, .87);
     }
+}
+
+
+.mat-dialog-container {
+    padding: 0 !important;
+}
+
+.dialog-content {
+    padding: 0 24px 24px 24px;
+}
+
+td-dialog {
+    margin: 24px;
 }

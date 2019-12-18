@@ -20,8 +20,8 @@ export class AddOrEditCustomerComponent implements OnInit {
   customerData: ICustomer;
 
   getTitle(): String {
-    let literal = this.editMode ? 'Edit' : 'Add'
-    return `${literal} Customer`;
+    let word = this.editMode ? 'Edit' : 'Add'
+    return `${word} Customer`;
   }
 
   cancel() {
@@ -33,8 +33,9 @@ export class AddOrEditCustomerComponent implements OnInit {
   }
 
   save() {
-    let json = this.customerForm.value();
-    let Observable: Observable<ICustomer> = this.editMode ? this.customerService.createCustomer(json) : this.customerService.updateCustomer({ customer_id: this.customerData.customer_id, ...json });
+    let json = this.customerForm.value;
+    console.log("json", json);
+    let Observable: Observable<ICustomer> = this.editMode ? this.customerService.updateCustomer({ customer_id: this.customerData.customer_id, ...json }) : this.customerService.createCustomer(json);
     Observable.subscribe(res => {
       this.dialogRef.close(res);
     });
@@ -42,39 +43,32 @@ export class AddOrEditCustomerComponent implements OnInit {
 
   getLocationErrorMsg() {
     let location = this.customerForm.get('location');
-    return location.hasError('invalidPostalCode') ? 'Please input your location, put postal code at end.' : '';
+    return location.hasError('invalidPostalCode') ? 'Please input your location, put postal code at end and separate with comma.' : '';
   }
 
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<AddOrEditCustomerComponent>,
     private customerService: CustomerService,
-    @Optional() @Inject(MAT_DIALOG_DATA) public customer: ICustomer
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    if (customer) {
-      this.customerData = customer;
+    if (data) {
+      this.customerData = data.customer;
     }
   }
 
   ngOnInit() {
     this.customerForm = this.fb.group({
       name: ['', Validators.required],
-      location: ['',
-        // Validators.required
-        [Validators.required, postalCodeValidator()]
+      location: ['', [Validators.required, postalCodeValidator()]
       ],
-      telephone: ['',
-        // Validators.required
-        [Validators.required, telephoneNumberValidator()]
+      telephone_number: ['', [Validators.required, telephoneNumberValidator()]
       ],
-      personOfContact: ['', Validators.required],
-      numberOfEmployees: [0,
-        // Validators.required
-        [Validators.required, naturalNumberValidator()]
+      person_of_contact: ['', Validators.required],
+      number_of_employees: [0, [Validators.required, naturalNumberValidator()]
       ],
     });
     console.log('form', this.customerForm);
   }
-
 
 }

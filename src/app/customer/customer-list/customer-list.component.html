@@ -7,15 +7,15 @@
         <button mat-icon-button (click)="addOrEditCustomer(false)">
             <mat-icon>add</mat-icon>
         </button>&nbsp;
-        <button mat-icon-button (click)="addOrEditCustomer(true)">
+        <button mat-icon-button (click)="addOrEditCustomer(true)" [disabled]="disableEditButton()">
             <mat-icon>edit</mat-icon>
         </button>&nbsp;
-        <button mat-icon-button (click)="deleteCustomer()">
+        <button mat-icon-button (click)="deleteCustomer()" [disabled]="disableDeleteButton()">
             <mat-icon>delete</mat-icon>
         </button>
     </mat-toolbar-row>
 </mat-toolbar>
 <td-data-table flex #customerTable [data]="customersList" [columns]="columns" selectable="true" multiple="true"
-    [sortable]="true">
+    [sortable]="true" (rowSelect)="rowSelected($event)" (selectAll)="selectAllEvent($event)">
 
 </td-data-table>

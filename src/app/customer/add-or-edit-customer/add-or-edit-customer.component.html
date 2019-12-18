@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>
     {{getTitle()}}
 </h1>
-<div fxLayout="column" mat-dialog-content class="container">
+<div fxLayout="column" class="dialog-content">
     <form fxLayout="column" fxLayoutGap="10px" [formGroup]="customerForm">
         <mat-form-field color="accent" fxFlex>
             <input matInput placeholder="Name" formControlName="name">
@@ -11,13 +11,13 @@
             <mat-error *ngIf="customerForm.get('location').invalid">{{getLocationErrorMsg()}}</mat-error>
         </mat-form-field>
         <mat-form-field color="accent" fxFlex>
-            <input matInput placeholder="Telephone Number" formControlName="telephone">
+            <input matInput placeholder="Telephone Number" formControlName="telephone_number">
         </mat-form-field>
         <mat-form-field color="accent" fxFlex>
-            <input matInput placeholder="Person Of Contact" formControlName="personOfContact">
+            <input matInput placeholder="Person Of Contact" formControlName="person_of_contact">
         </mat-form-field>
         <mat-form-field color="accent" fxFlex>
-            <input matInput placeholder="Number Of Employees" formControlName="numberOfEmployees">
+            <input matInput placeholder="Number Of Employees" formControlName="number_of_employees">
         </mat-form-field>
     </form>
     <div fxFlex fxLayoutGap="20px" fxLayoutAlign="center center">

@@ -12,8 +12,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentDialogsModule } from '@covalent/core/dialogs';
 
 @NgModule({
   declarations: [],
@@ -25,6 +27,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
     CovalentLayoutModule,
     CovalentStepsModule,
     CovalentBaseEchartsModule,
+    CovalentDialogsModule,
     MatListModule,
     MatIconModule,
     MatButtonModule,
@@ -33,6 +36,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
     MatToolbarModule,
     MatInputModule,
     MatDialogModule,
+    MatSnackBarModule,
     FlexLayoutModule,
   ],
   exports: [
@@ -43,6 +47,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
     CovalentLayoutModule,
     CovalentStepsModule,
     CovalentBaseEchartsModule,
+    CovalentDialogsModule,
     MatListModule,
     MatIconModule,
     MatButtonModule,
@@ -51,6 +56,7 @@ import { CovalentCommonModule } from '@covalent/core/common';
     MatToolbarModule,
     MatInputModule,
     MatDialogModule,
+    MatSnackBarModule,
     FlexLayoutModule,
   ]
 })
