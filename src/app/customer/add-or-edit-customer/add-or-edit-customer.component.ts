@@ -59,13 +59,13 @@ export class AddOrEditCustomerComponent implements OnInit {
 
   ngOnInit() {
     this.customerForm = this.fb.group({
-      name: ['', Validators.required],
-      location: ['', [Validators.required, postalCodeValidator()]
+      name: [this.editMode ? this.customerData.name : '', Validators.required],
+      location: [this.editMode ? this.customerData.location : '', [Validators.required, postalCodeValidator()]
       ],
-      telephone_number: ['', [Validators.required, telephoneNumberValidator()]
+      telephone_number: [this.editMode ? this.customerData.telephone_number : '', [Validators.required, telephoneNumberValidator()]
       ],
-      person_of_contact: ['', Validators.required],
-      number_of_employees: [0, [Validators.required, naturalNumberValidator()]
+      person_of_contact: [this.editMode ? this.customerData.person_of_contact : '', Validators.required],
+      number_of_employees: [this.editMode ? this.customerData.number_of_employees : 0, [Validators.required, naturalNumberValidator()]
       ],
     });
     console.log('form', this.customerForm);

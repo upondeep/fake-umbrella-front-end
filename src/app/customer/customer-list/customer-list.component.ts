@@ -10,6 +10,7 @@ import { flatMap, catchError, onErrorResumeNext, toArray } from 'rxjs/operators'
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TdDialogService } from '@covalent/core/dialogs';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-customer-list',
@@ -90,6 +91,7 @@ export class CustomerListComponent implements OnInit {
             this.snackBar.open(elem.message, 'Dismiss', { duration: 4000 });
           }
         }
+        this.refreshCustomerList();
       }
     });
   }
