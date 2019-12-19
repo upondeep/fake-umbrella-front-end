@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentStepsModule } from '@covalent/core/steps';
-import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,7 +25,6 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
     CovalentCommonModule,
     CovalentLayoutModule,
     CovalentStepsModule,
-    CovalentBaseEchartsModule,
     CovalentDialogsModule,
     MatListModule,
     MatIconModule,
@@ -46,7 +44,6 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
     CovalentCommonModule,
     CovalentLayoutModule,
     CovalentStepsModule,
-    CovalentBaseEchartsModule,
     CovalentDialogsModule,
     MatListModule,
     MatIconModule,
