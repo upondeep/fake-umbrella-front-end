@@ -1,8 +1,8 @@
 export interface ICustomer {
-    customer_id?: String,
-    name: String,
-    person_of_contact: String,
-    telephone_number: String,
-    location: String,
+    customer_id?: string,
+    name: string,
+    person_of_contact: string,
+    telephone_number: string,
+    location: string,
     number_of_employees: Number,
 }

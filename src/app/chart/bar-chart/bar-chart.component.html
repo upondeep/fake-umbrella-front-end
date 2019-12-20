@@ -1,1 +1,22 @@
-<p>bar-chart works!</p>
+<div class="chart-wrapper">
+    <canvas baseChart [labels]="barChartLabels" [datasets]="barChartData" chartType="bar" [options]="barChartOptions"
+        legend="true"></canvas>
+</div>
+
+
+<!-- <td-chart [style.height.px]="300">
+    <td-chart-dataset [source]="[
+    ['Electronics', 150, 80],
+    ['Toys', 130, 122],
+    ['Grocery', 150, 80],
+    ['Appliances', 120, 120],
+    ['Automotive', 150, 80],
+    ['Sports', 120, 120]
+  ]"></td-chart-dataset>
+    <td-chart-x-axis [show]="true" [position]="'bottom'" [type]="'category'" [boundaryGap]="true"></td-chart-x-axis>
+    <td-chart-y-axis [show]="true" [type]="'value'" [position]="'right'" [max]="300"
+        [splitLine]="{ lineStyle: { type: 'dotted' }}"></td-chart-y-axis>
+    <td-chart-series td-bar [name]="'Today'"></td-chart-series>
+    <td-chart-series td-bar [name]="'Yesterday'"
+        [markLine]="{ data: [{ name: 'Average', value: 30, xAxis: 1, yAxis: 30 }] }"></td-chart-series>
+</td-chart> -->

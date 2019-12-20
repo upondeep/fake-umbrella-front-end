@@ -6,6 +6,7 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { SharedModule } from '../shared/shared.module';
 import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CovalentBarEchartsModule } from '@covalent/echarts/bar';
     CovalentBaseEchartsModule,
     CovalentBarEchartsModule,
     SharedModule,
+    ChartsModule,
   ]
 })
 export class ChartModule { }
