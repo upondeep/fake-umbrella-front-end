@@ -59,6 +59,7 @@ export class CustomerListComponent implements OnInit {
   refreshCustomerList() {
     this.customerService.getAllCustomers().subscribe(res => {
       this.customersList = res;
+      this.selectedCustomers = [];
     });
   }
 
