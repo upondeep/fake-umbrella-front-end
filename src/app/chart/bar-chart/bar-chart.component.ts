@@ -36,7 +36,7 @@ export class BarChartComponent implements OnInit {
       let isRainyday = !_.every(customer['weather']['list'], w => {
         return w['weather'][0]['main'] != "Rain";
       });
-      backgroundColors.push(isRainyday ? 'Red' : 'Green');
+      backgroundColors.push(isRainyday ? '#ff8484' : '#90ee90');
     }
     this.barChartData = [{
       data: emplyeeNumbersData,
@@ -45,7 +45,7 @@ export class BarChartComponent implements OnInit {
       hoverBackgroundColor: backgroundColors,
       // pointHoverBackgroundColor: 'none',
     }];
-    console.log("barChartData:", this.barChartData);
+    // console.log("barChartData:", this.barChartData);
   }
 
   ngOnInit() {
@@ -55,20 +55,15 @@ export class BarChartComponent implements OnInit {
           .orderBy(['number_of_employees'], ['desc'])
           .slice(0, 10)
           .value();
-
-        console.log("Sorted customers:", result);
+        // console.log("Sorted customers:", result);
         return result;
       }),
       flatMap((customers: ICustomer[]) => {
-        console.log("customers:", customers);
-
+        // console.log("customers:", customers);
         return from(customers);
       }),
       flatMap((customer: ICustomer) => {
-        console.log("single customer:", customer);
-
         let zipCode = customer.location.match(postalCodeRegex)[0];
-
         return this.weatherService.getWeatherForecast(zipCode).pipe(
           catchError(err => of(err)),
           onErrorResumeNext(),
@@ -81,7 +76,6 @@ export class BarChartComponent implements OnInit {
       toArray(),
     ).subscribe(
       res => {
-        console.log("weather service return:", res);
         this.generateBarChartData(res);
       },
       err => {
