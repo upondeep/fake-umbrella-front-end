@@ -34,7 +34,6 @@ export class AddOrEditCustomerComponent implements OnInit {
 
   save() {
     let json = this.customerForm.value;
-    console.log("json", json);
     let Observable: Observable<ICustomer> = this.editMode ? this.customerService.updateCustomer({ customer_id: this.customerData.customer_id, ...json }) : this.customerService.createCustomer(json);
     Observable.subscribe(res => {
       this.dialogRef.close(res);
@@ -65,7 +64,6 @@ export class AddOrEditCustomerComponent implements OnInit {
       person_of_contact: [this.editMode ? this.customerData.person_of_contact : '', Validators.required],
       number_of_employees: [this.editMode ? this.customerData.number_of_employees : 0, [Validators.required, naturalNumberValidator()]],
     });
-    console.log('form', this.customerForm);
   }
 
 }

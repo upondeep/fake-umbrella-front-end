@@ -50,7 +50,6 @@ export class CustomerListComponent implements OnInit {
     });
     dialogRef.componentInstance.editMode = editMode;
     dialogRef.afterClosed().subscribe(res => {
-      console.log('result:', res);
       if (res) this.refreshCustomerList();
     });
   }
@@ -108,7 +107,6 @@ export class CustomerListComponent implements OnInit {
 
   //#region data-table row operation
   rowSelected(event: ITdDataTableSelectEvent) {
-    console.log(event);
     if (event.selected) {
       this.addRowToSelection(event.row);
     } else {
@@ -118,7 +116,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   selectAllEvent(event: ITdDataTableSelectAllEvent) {
-    console.log(event);
     _.forEach(event.rows, row => {
       if (event.selected) {
         this.addRowToSelection(row);

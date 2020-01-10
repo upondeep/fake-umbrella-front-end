@@ -17,10 +17,7 @@ export class WeatherCacheService {
       let cacheData = this.weatherData.get(zipCode);
       let query_time = moment(cacheData.query_time);
       let now = moment();
-      console.log("cacheData:", cacheData);
-      console.log("now:", now)
       if (query_time.add(3, 'h') > now) {
-        console.log("return cached data skip api call!");
         return of(cacheData);
       }
     };
@@ -28,7 +25,6 @@ export class WeatherCacheService {
       tap(res => {
         res.query_time = moment().toString();
         this.weatherData.set(zipCode, res);
-        console.log("in tap method:", res);
       }, err => console.log),
     );
   }

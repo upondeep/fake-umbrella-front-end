@@ -43,9 +43,7 @@ export class BarChartComponent implements OnInit {
       backgroundColor: backgroundColors,
       label: 'Number of employees',
       hoverBackgroundColor: backgroundColors,
-      // pointHoverBackgroundColor: 'none',
     }];
-    // console.log("barChartData:", this.barChartData);
   }
 
   ngOnInit() {
@@ -55,11 +53,9 @@ export class BarChartComponent implements OnInit {
           .orderBy(['number_of_employees'], ['desc'])
           .slice(0, 10)
           .value();
-        // console.log("Sorted customers:", result);
         return result;
       }),
       flatMap((customers: ICustomer[]) => {
-        // console.log("customers:", customers);
         return from(customers);
       }),
       flatMap((customer: ICustomer) => {
@@ -82,9 +78,6 @@ export class BarChartComponent implements OnInit {
 
       }
     ));
-    // this.weatherService.getWeatherForecast("10025").subscribe(res => {
-    //   console.log("test weather:", res);
-    // })
   }
 
   ngOnDestroy() {
