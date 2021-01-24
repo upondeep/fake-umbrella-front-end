@@ -9,6 +9,8 @@ import * as _ from 'lodash';
 import { postalCodeRegex } from '../../shared/form-validators/postal-code.directive';
 import { WeatherCacheService } from 'src/app/services/weather-cache.service';
 
+export const RED = '#ff8484';
+export const GREEN = '#90ee90';
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
@@ -18,7 +20,16 @@ export class BarChartComponent implements OnInit {
 
   barChartData: ChartDataSets[] = [{ data: [] }];
   barChartLabels: string[] = []
-  barChartOptions: ChartOptions = { responsive: true };
+  barChartOptions: ChartOptions = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+        }
+      }]
+    }
+  };
   subscriptions$: Subscription = new Subscription();
 
   constructor(
@@ -36,7 +47,7 @@ export class BarChartComponent implements OnInit {
       let isRainyday = !_.every(customer['weather']['list'], w => {
         return w['weather'][0]['main'] != "Rain";
       });
-      backgroundColors.push(isRainyday ? '#ff8484' : '#90ee90');
+      backgroundColors.push(isRainyday ? GREEN : RED);
     }
     this.barChartData = [{
       data: emplyeeNumbersData,
@@ -81,7 +92,7 @@ export class BarChartComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    // this.subscriptions$.unsubscribe();
+    this.subscriptions$.unsubscribe();
   }
 
 }

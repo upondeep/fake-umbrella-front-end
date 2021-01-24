@@ -33,6 +33,7 @@ export class CustomerService {
   }
 
   updateCustomer(json: ICustomer) {
+    console.log("update json:", json);
     return this.http.put<ICustomer>(`${apiBaseUrl}/customers`, json);
   }
 }
