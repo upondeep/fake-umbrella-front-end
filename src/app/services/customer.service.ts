@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ICustomer } from '../model/icustomer.interface';
 
 // const apiBaseUrl = "http://localhost:3000";
-const apiBaseUrl = "http://back-end:3000"; //
+const apiBaseUrl = "http://back-end:30001"; //
 
 @Injectable({
   providedIn: 'root'
