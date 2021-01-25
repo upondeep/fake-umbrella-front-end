@@ -62,7 +62,7 @@ export class BarChartComponent implements OnInit {
       map(customerList => {
         let result = _.chain(customerList)
           .orderBy(['number_of_employees'], ['desc'])
-          .slice(0, 10)
+          .slice(0, 4)
           .value();
         return result;
       }),
