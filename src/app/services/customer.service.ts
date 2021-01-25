@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ICustomer } from '../model/icustomer.interface';
 
-// const apiBaseUrl = "http://localhost:3000";
+const apiBaseUrl = "http://localhost:3000";
 // const apiBaseUrl = "http://localhost:30001";
-const apiBaseUrl = "http://back-end:3000"; //
+// const apiBaseUrl = "http://back-end:3000"; //
 // const apiBaseUrl = "http://docker.for.win.localhost:3000"; //
 // const apiBaseUrl = "http://10.0.0.219:3000"; //
 
