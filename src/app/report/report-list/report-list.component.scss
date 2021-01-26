@@ -1,0 +1,44 @@
+@import 'var';
+
+:host ::ng-deep {
+    td-data-table {
+        border: 1px solid #ccc !important;
+    }
+
+    .td-data-table-head {
+        background-color: $comfort-eye;
+
+        .td-data-table-column-row {
+            border-bottom-width: 0 !important;
+
+            .td-data-table-column {
+                // &:not(:first-of-type):not(:last-of-type) {
+                    border-right: 1px solid #ccc;
+                // }
+
+                font-size: 14px !important;
+            }
+
+        }
+
+    }
+
+    .td-data-table-cell {
+        // &:not(:first-of-type):not(:last-of-type) {
+            border-right: 1px solid #ccc;
+        // }
+    }
+
+    .td-data-table-scrollable {
+        overflow: visible !important;
+    }
+
+    .toolbar-spacer {
+        flex: 1 1 auto;
+    }
+
+    mat-toolbar-row {
+        padding: 0 50px;
+    }
+
+}
